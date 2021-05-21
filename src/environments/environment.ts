@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  client_id: 'e0c35d971e904f7ca328d98022a14c92',
+  client_secret: '9cbb0d0c57da4fad83f924c7010c6a1f',
+  callback: 'http://localhost:4200/callback'
 };
 
 /*
