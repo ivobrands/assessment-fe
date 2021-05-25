@@ -3,6 +3,10 @@ import { Observable, Subject } from "rxjs";
 import { takeUntil, tap } from "rxjs/operators";
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import {SpotifyTokenResponse} from "../model/spotify-token-response.model";
+import {SpotifyAlbum} from "../model/spotify-album.model";
+import {SpotifyArtist} from "../model/spotify-artist.model";
+import {SpotifySong} from "../model/spotify-song.model";
 
 @Injectable({
   providedIn: 'root'
@@ -35,10 +39,4 @@ export class SpotifyService {
       .append('type', 'artist')
     return this.httpClient.get<any>(`${this.searchUrl}`, { headers, params } )
   }
-}
-
-export interface SpotifyTokenResponse {
-  access_token: string;
-  expires_in: number;
-  token_type: string;
 }

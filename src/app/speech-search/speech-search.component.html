@@ -1,0 +1,29 @@
+<div class="button-container">
+  <div (click)="triggerRecord()" class="button" [ngClass]="{'active': recording}">
+    <div class="inner" [ngClass]="{'active': recording}"></div>
+  </div>
+</div>
+
+<span class="search-text">{{ textToSpeechService.text }}</span>
+
+<div class="result-container">
+  <div class="result-container__list">
+    <h2 *ngIf="albumList">Albums</h2>
+    <div class="result-container__item" *ngFor="let item of albumList">
+      <div>- {{item.name}}</div>
+    </div>
+  </div>
+  <div class="result-container__list">
+    <h2 *ngIf="artistList">Artists</h2>
+    <div class="result-container__item" *ngFor="let item of artistList">
+      <div>- {{item.name}}</div>
+      <img style="width: 100px; height: 100px;" [src]="item.imageList[0]?.url" />
+    </div>
+  </div>
+  <div class="result-container__list">
+    <h2 *ngIf="songList">Songs</h2>
+    <div class="result-container__item" *ngFor="let item of songList">
+      <div>- {{item.name}}</div>
+    </div>
+  </div>
+</div>

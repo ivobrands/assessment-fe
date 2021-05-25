@@ -23,11 +23,5 @@ export class AppComponent implements OnDestroy {
     this.destroy$.next();
     this.destroy$.complete();
   }
-
-  searchMusic($event: string) {
-    this.spotifyService.searchMusic($event).pipe(takeUntil(this.destroy$)).subscribe((results) => {
-      console.log(results)
-    })
-  }
 }
 
